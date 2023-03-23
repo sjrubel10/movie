@@ -1,0 +1,18 @@
+.movie-content-holder{
+    display: block;
+    /* float: left; */
+    position: relative;
+    width: 800px;
+    margin: auto; 
+}
+.movie-info-holder{
+    display: block;
+    float: left;
+    position: relative;
+    color: #FFFFFF;
+}
+
+.cover-image {
+    display: block;
+    float: left;
+}
