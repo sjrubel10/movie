@@ -1,9 +1,9 @@
 .movie-content-holder{
     display: block;
-    /* float: left; */
+    float: left;
     position: relative;
-    width: 800px;
-    margin: auto; 
+    width: calc( 100% - 10px);
+    padding: 20px 5px 30px 5px; 
 }
 .movie-info-holder{
     display: block;
@@ -15,4 +15,23 @@
 .cover-image {
     display: block;
     float: left;
+    position: relative;
+    padding: 5px;
+}
+
+.movie-container{
+    display: block;
+    position: relative;
+    width: 800px;
+    margin: auto;
+}
+.info-holder {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.related-movie{
+    color: #FFFFFF;
+    font-size: 20px;
 }

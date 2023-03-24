@@ -9,7 +9,7 @@ const Layout = () => {
     <>
       <div className="topbar-container">
         <div className="logo-container">
-            <img src={siteIcon} alt="Website Logo" className="site-logo" />
+        <Link to="/"><img src={siteIcon} alt="Website Logo" className="site-logo" /></Link>
         </div>
         <nav>
             <ul className="nav-links">
@@ -18,6 +18,9 @@ const Layout = () => {
             </li>
             <li>
                 <Link to="/about">Blogs</Link>
+            </li>
+            <li>
+                <Link to="/signup">Sing Up</Link>
             </li>
             </ul>
         </nav>

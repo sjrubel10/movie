@@ -7,8 +7,8 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   
-  .logo-container img {
-    width: 8rem;
+  .logo-container {
+    /* width: 8rem; */
     height: auto;
   }
   
@@ -72,4 +72,5 @@
     position: relative;
     width: 50px;
     height: 50px;
+    border-radius: 8px;
   }
