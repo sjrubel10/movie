@@ -26,9 +26,9 @@ function RegistrationForm() {
     event.preventDefault();
     axios.post('http://localhost:8888/api/user/save',formData).then((response)=>{
       console.log(response.data.status);
-      if( response.data.status == 1 ){
+      // if( response.data.status == 1 ){
         navigate('/lists');
-      }
+      // }
     })
     // console.log(formData);
   }

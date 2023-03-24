@@ -15,17 +15,22 @@ const MovieLists = () => {
         
     },[])
 
+    const Display =({data}) => {
+        return (
+            <p>{data.username}</p>
+        );
+    }
+
     // {console.log(getData)}
     return (
        <>
        <h1>  Movie Lists</h1>
+       
        {
         getData.length> 0 ? (
             getData.map((data) => {
 
-                {console.log(data)}
-                <h1 style={{color: "#FFFFFF"}}>fadskfjhakdjsfhajklds</h1>
-                
+                return <Display data = {data}/>
             
             })
         ) :(
