@@ -1,13 +1,13 @@
 import React from "react";
 // import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./component/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./component/About";
-import Movie from "./component/Movie";
-import Registration from "./component/Registration";
-import MovieLists from "./component/Movielists";
+import Home from "./component/Home";
 import Layout from "./component/Layout";
-
+import Movie from "./component/Movie";
+import MovieLists from "./component/Movielists";
+import Registration from "./component/Registration";
+import TestPagination from "./component/TestPagination";
 
 // const apikey = '5f711c12';
 
@@ -25,6 +25,7 @@ const App = () => {
                 <Route path="movie/:id" element={<Movie />} />
                 <Route path="signup" element={<Registration />} />
                 <Route path="lists" element={<MovieLists />} />
+                <Route path="page" element={<TestPagination itemsPerPage={4}/>} />
             </Route>
         </Routes>
     </BrowserRouter>

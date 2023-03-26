@@ -1,9 +1,8 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-import MovieCard from '../MovieCard'
+import MovieCard from '../MovieCard';
 import SearchIcon from '../search.svg';
-import { searchMovies } from './SearchMovies'
+import { searchMovies } from './SearchMovies';
 
 
 const Home = () => {
@@ -39,6 +38,16 @@ const Home = () => {
 
     }
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+
+            onChangeSearch(e.target.value)
+            searchTermMovies(searchTerm)
+
+        }
+
+      }
+
     return (
 
         <div className="app">
@@ -49,6 +58,7 @@ const Home = () => {
                     placeholder = "Search for movie" 
                     value= {searchTerm}
                     onChange={(e) => onChangeSearch(e.target.value)}
+                    onKeyDown={handleKeyDown}
                 />
 
                 <img

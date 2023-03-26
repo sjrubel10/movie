@@ -12,11 +12,18 @@
     color: #FFFFFF;
 }
 
-.cover-image {
+.cover-image-holder {
     display: block;
     float: left;
+    width: 100%;
     position: relative;
     padding: 5px;
+}
+
+.cover-image {
+    width: 700px;
+    height: 800px;
+    margin: auto;
 }
 
 .movie-container{
@@ -35,3 +42,18 @@
     color: #FFFFFF;
     font-size: 20px;
 }
+
+
+@media only screen and (max-width: 800px) {
+    .movie-container {
+        width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .cover-image {
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+  }

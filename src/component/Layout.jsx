@@ -1,8 +1,8 @@
-import { Outlet, Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 
-import siteIcon from '../images/logo.jpeg';
 import '../css/topbar.css';
+import siteIcon from '../images/logo.jpeg';
 
 const Layout = () => {
   return (
@@ -17,10 +17,14 @@ const Layout = () => {
                 <Link to="/">Home</Link>
             </li>
             <li>
-                <Link to="/about">Blogs</Link>
+                <Link to="/lists">Blogs</Link>
             </li>
             <li>
                 <Link to="/signup">Sing Up</Link>
+            </li>
+            
+            <li>
+                <Link to="/page">Test Pagination</Link>
             </li>
             </ul>
         </nav>

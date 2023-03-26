@@ -6,14 +6,21 @@ const API_URL = 'https://www.omdbapi.com?apikey=5f711c12';
 
 const searchMovies = async (title) => {
 
-    // const [movie, setMovies] = useState([]);
-
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
 
-    // console.log(data);
+    // console.log();
+    if(data.Response === 'True') {
 
-    return data.Search;
+       var  result = data.Search
+       
+    } else {
+
+        result = {}
+
+    }
+    //  console.log( result );
+    return result;
 }
 
  const get_movie = async ( IMDbId ) => {
@@ -23,10 +30,9 @@ const searchMovies = async (title) => {
     const response = await fetch(fetchUrl);
     const movie_data = await response.json();
 
-    console.log(movie_data);
-
     return movie_data;
 
 }
 
- export { searchMovies, get_movie } 
+ export { searchMovies, get_movie };
+

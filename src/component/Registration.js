@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
 import axios from 'axios';
+
+import React, { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
 import '../css/Registration.css';
 
+import Popup from './Popup';
+
 function RegistrationForm() {
 
+  
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -15,6 +19,7 @@ function RegistrationForm() {
     password: '',
   });
 
+
   const handleChange = (event) => {
     setFormData({
       ...formData,
@@ -22,13 +27,30 @@ function RegistrationForm() {
     });
   }
 
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
+
   const handleSubmit = (event) => {
+
     event.preventDefault();
-    axios.post('http://localhost:8888/api/user/save',formData).then((response)=>{
-      console.log(response.data.status);
-      // if( response.data.status == 1 ){
+
+    setIsButtonClicked(true);
+
+    axios.post('http://localhost/movie_api/V1/setmoviedata.php',formData).then((response)=>{
+
+      if( response.data.status === 'success' ){
+
+        alert( response.data.message );
+        setIsButtonClicked(false);
         navigate('/lists');
-      // }
+
+      }else {
+
+        alert( response.data.message );
+        <Popup/>
+        setIsButtonClicked(false);
+
+      }
+
     })
     // console.log(formData);
   }
@@ -47,7 +69,7 @@ function RegistrationForm() {
         Password:
         <input type="password" name="password" value={formData.password} onChange={handleChange} />
       </label>
-      <button type="submit">Submit</button>
+      <button type="submit"  disabled={isButtonClicked} >Submit</button>
     </form>
   );
 }

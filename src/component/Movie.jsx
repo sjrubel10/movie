@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { searchMovies, get_movie } from './SearchMovies'
+import { get_movie, searchMovies } from './SearchMovies';
 
-import MovieCard from '../MovieCard'
+import MovieCard from '../MovieCard';
 
 import '../css/movie.css';
 
@@ -21,28 +21,30 @@ import '../css/movie.css';
     
     const {id} = useParams();
 
+    
     useEffect(() => { 
         get_movie(id).then(data=> {
                 setMoviesData(data);
         });
-    }, []);
+    }, [id]);
 
     useEffect(()=>{
         if(moviesData.hasOwnProperty('Title')){
 
-            const temptitle = moviesData.Title.split(' ')[0];
+            // const temptitle = moviesData.Title.split(' ')[1];
+
+            const temptitle = moviesData.Title.split(' ').slice(0,1).join(' ');
+
             searchMovies(temptitle).then(data=> {
+
                 setRelatedMovies(data)
             });
         }
         
     },[moviesData])
 
-    
+    // console.log( moviesData );
 
-
-
-   
     return (
 
         <div className="conent" key={moviesData.imdbID}>
@@ -58,8 +60,8 @@ import '../css/movie.css';
                             <span> Language: {moviesData.Language}</span>
                         </div>
 
-                        <div className="cover-image">
-                            <img src={moviesData.Poster !== "N/A" ? moviesData.Poster : "https://via.placeholder.com/400"} alt={moviesData.Title}  />
+                        <div className="cover-image-holder">
+                            <img className="cover-image" src={moviesData.Poster !== "N/A" ? moviesData.Poster : "https://via.placeholder.com/400"} alt={moviesData.Title}  />
                         </div>
 
                         <div className="info-holder">
