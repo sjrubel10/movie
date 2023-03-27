@@ -1,9 +1,10 @@
 import axios from "axios";
 import React from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import '../css/Movielists.css';
 
-import { useEffect, useState } from "react";
 
 const MovieLists = () => {
 
@@ -11,18 +12,10 @@ const MovieLists = () => {
     
     useEffect(()=>{
 
-        const apiUrl = `http://localhost/movie_api/V1/setmoviedata.php`;
-        const params = {
-            id: 123,
-            name: 'John Smith',
-            email: 'john@example.com',
-            phoneNumbers: [
-              '555-1234',
-              '555-5678'
-            ]
-          };
+        const apiUrl = `http://localhost:8888/movie_api/V1/setmoviedata.php`;
         
-        axios.get( apiUrl, {params} ).then((response)=>{
+        
+        axios.get( apiUrl ).then((response)=>{
             
             setGetData( response.data ); 
 
@@ -30,20 +23,17 @@ const MovieLists = () => {
         
     },[])
 
-    const onEdit = ( id ) => {
-        alert(id+"Edit Clicked");
-    }
-
+    
     const onDelete = ( id ) => {
 
-      const apiUrl = `http://localhost/movie_api/V1/deletemovie.php`;
+      const apiUrl = `http://localhost:8888/movie_api/V1/deletemovie.php`;
         const params = {
             deleteId: id
           };
       
         axios.get( apiUrl, {params} ).then((response)=>{
             
-        // console.log( response.data.status );
+        console.log( response.data.status );
 
         if( response.data.status === 'success' ) {
           const updatedPosts = getData.filter(post => post.id !== id);
@@ -63,8 +53,8 @@ const MovieLists = () => {
             <div className="card-header">
               <h3 className="card-title">{data.title}</h3>
               <div className="card-buttons">
-                <button onClick={() => onEdit(data.id)}>Edit</button>
-                <button onClick= {() => onDelete(data.id)} >Delete</button>
+              <Link to = {`/edit/${data.id}`} state = { { editdata :data }}><button>Edit</button></Link>
+               <button onClick= {() => onDelete(data.id)} >Delete</button>
               </div>
             </div>
             <div className="card-body">

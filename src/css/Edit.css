@@ -1,0 +1,100 @@
+
+.edit-field-holder {
+    display: block;
+    width: 400px;
+    border: 1px solid #c1afaf;
+    position: relative;
+    margin: auto;
+    top: 50px;
+    padding: 20px 10px 10px 10px;
+    background-color: #7a7575;
+    border-radius: 5px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .formdata {
+    width: 100%;
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .perlevel{
+    width: calc(100% - 10px);
+    text-align: center;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #c0baba;
+  }
+  
+  input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0062cc;
+  }
+
+  .textfield{
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin: auto;
+  }
+
+  .submitBtn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 30px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    float: left;
+    cursor: pointer;
+  }
+  
+  .cancelBtn {
+    color: #F6F6F6;
+    float: left;
+    cursor: pointer;
+    position: absolute;
+    font-size: 12px;
+    top: 5px;
+    right: 12px;
+  }
+  .cancelBtn:hover {
+    color: #990000;
+  }
+
+  .edittitletext{
+    display: block;
+    float: left;
+    position: relative;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0px;
+    font-size: 16px;
+  }

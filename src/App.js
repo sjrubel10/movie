@@ -8,7 +8,8 @@ import Movie from "./component/Movie";
 import MovieLists from "./component/Movielists";
 import Registration from "./component/Registration";
 import TestPagination from "./component/TestPagination";
-
+import EditList from "./component/Editlists";
+import CreateMovie from "./component/CreateMovie";
 // const apikey = '5f711c12';
 
 // console.log(API_URL);
@@ -26,6 +27,8 @@ const App = () => {
                 <Route path="signup" element={<Registration />} />
                 <Route path="lists" element={<MovieLists />} />
                 <Route path="page" element={<TestPagination itemsPerPage={4}/>} />
+                <Route path="edit/:id" element={<EditList />} />
+                <Route path="creeatemovie" element={<CreateMovie />} />
             </Route>
         </Routes>
     </BrowserRouter>

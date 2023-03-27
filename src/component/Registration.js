@@ -35,7 +35,10 @@ function RegistrationForm() {
 
     setIsButtonClicked(true);
 
-    axios.post('http://localhost/movie_api/V1/setmoviedata.php',formData).then((response)=>{
+    // const urlForMac = 'http://localhost:8888/movie_api/';
+    // const urlForMac = 'http://localhost:8888/movie_api/';
+
+    axios.post('http://localhost:8888/movie_api/V1/setmoviedata.php',formData).then((response)=>{
 
       if( response.data.status === 'success' ){
 

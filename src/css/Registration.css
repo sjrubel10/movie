@@ -21,7 +21,7 @@ form label {
     margin-right: 10px;
     font-weight: bold;
 }
-
+/* 
 form input[type="text"],
 form input[type="email"],
 form input[type="password"] {
@@ -31,7 +31,7 @@ form input[type="password"] {
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-}
+} */
 
 form button[type="submit"] {
     width: 100%;
