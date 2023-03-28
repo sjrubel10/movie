@@ -1,10 +1,45 @@
-import { Link, Outlet } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 
 import '../css/topbar.css';
 import siteIcon from '../images/logo.jpeg';
+import React from "react";
 
 const Layout = () => {
+  const [selectedButton, setSelectedButton] = useState(null);
+
+  const location = useLocation();
+  // function handleClick(event) {
+  //   const buttonText = event.target.textContent;
+  //   // console.log(`The button text is: ${buttonText}`);
+  // }
+
+  const handleClick = (index) => {
+    setSelectedButton(index);
+  };
+
+  useEffect( () =>{
+
+      if( location.pathname === '/') {
+        var index = 0;
+      } else if(location.pathname === '/lists') {
+        index = 1;
+      }else if(location.pathname === '/signup') {
+        index = 2;
+      }else if(location.pathname === '/page'){
+        index = 3;
+      }else if(location.pathname === '/about'){
+        index = 4;
+      }else {
+        index = 5;
+      }
+      setSelectedButton(index);
+
+    }, 
+    [location.pathname]
+  );
+
   return (
     <>
       <div className="topbar-container">
@@ -14,17 +49,24 @@ const Layout = () => {
         <nav>
             <ul className="nav-links">
             <li>
-                <Link to="/">Home</Link>
+                <Link  onClick={() => handleClick(0)} style={{ color: selectedButton === 0 ? 'red' : 'white' }}
+                to="/">Home</Link>
             </li>
             <li>
-                <Link to="/lists">Blogs</Link>
+                <Link  onClick={() => handleClick(1)} style={{ color: selectedButton === 1 ? 'red' : 'white' }}
+                to="/lists">Blogs</Link>
             </li>
             <li>
-                <Link to="/signup">Sing Up</Link>
+                <Link  onClick={() => handleClick(2)} style={{ color: selectedButton === 2 ? 'red' : 'white' }}
+                to="/signup">Sing Up</Link>
             </li>
-            
             <li>
-                <Link to="/page">Test Pagination</Link>
+                <Link  onClick={() => handleClick(3)} style={{ color: selectedButton === 3 ? 'red' : 'white' }}
+                to="/page">Test Pagination</Link>
+            </li>
+            <li>
+                <Link  onClick={() => handleClick(4)} style={{ color: selectedButton === 4 ? 'red' : 'white' }}
+                to="/about">About</Link>
             </li>
             </ul>
         </nav>

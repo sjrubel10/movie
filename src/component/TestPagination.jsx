@@ -9,7 +9,7 @@ function Items({ currentItems }) {
     <>
       {currentItems &&
         currentItems.map((item) => (
-          <div >
+          <div key= {Math.random()}>
             <h3>Item #{item}</h3>
           </div>
         ))}

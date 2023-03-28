@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import MovieCard from '../MovieCard';
 import SearchIcon from '../search.svg';
@@ -16,6 +16,12 @@ const Home = () => {
     //     const movie_data = await response.json();
     // }
 
+    const inputElement = useRef();
+
+    const focusInput = () => {
+        inputElement.current.focus();
+      };
+
 
     useEffect(() => {
 
@@ -27,9 +33,19 @@ const Home = () => {
     }, [] );
 
     const searchTermMovies = (term) => {
-        searchMovies(term).then(data=> {
-            setMovies(data)
-        });
+
+        if( term === '') {
+
+            focusInput();
+
+        }else {
+
+            searchMovies(term).then(data=> {
+                setMovies(data)
+            });
+
+        }
+       
     }
 
     const onChangeSearch = (value) => {
@@ -57,6 +73,7 @@ const Home = () => {
                 <input 
                     placeholder = "Search for movie" 
                     value= {searchTerm}
+                    ref={inputElement}
                     onChange={(e) => onChangeSearch(e.target.value)}
                     onKeyDown={handleKeyDown}
                 />
