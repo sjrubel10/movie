@@ -16,7 +16,7 @@ const searchMovies = async (title) => {
        
     } else {
 
-        result = {}
+        result = []
 
     }
     //  console.log( result );

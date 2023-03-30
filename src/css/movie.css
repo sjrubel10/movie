@@ -43,6 +43,21 @@
     font-size: 20px;
 }
 
+.loadinggif{
+    display: block;
+    float: left;
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 25px;
+}
+
+.emptytext{
+    text-align: center;
+    width: 100%;
+    color: #FFFFFF;
+}
+
 
 @media only screen and (max-width: 800px) {
     .movie-container {
