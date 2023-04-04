@@ -11,7 +11,6 @@ import TestPagination from "./component/TestPagination";
 import EditList from "./component/Editlists";
 import CreateMovie from "./component/CreateMovie";
 import EditMovie from "./component/EditMovie";
-import AddNewHtml from "./component/AddNewHtml";
 import CreateQuizForm from "./component/CreateQuizForm";
 // const apikey = '5f711c12';AddNewHtml CreateQuizForm
 
@@ -34,7 +33,6 @@ const App = () => {
                 <Route path="creeatemovie" element={<CreateMovie />} />
                 <Route path="editmovie" element={<EditMovie />} />
 
-                <Route path="addhtml" element={<AddNewHtml />} />
                 <Route path="createquiz" element={<CreateQuizForm />} />
             </Route>
         </Routes>

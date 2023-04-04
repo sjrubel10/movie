@@ -11,9 +11,11 @@ const EditList = () => {
     const data = editdataLocation.state.editdata;
 
     // const [id] = useState(data.id);
-    const [title, setName] = useState(data.title);
-    const [description, setAge] = useState(data.description);
-    const [actors, setEmail] = useState(data.actors);
+    const [title, setTitle] = useState(data.title);
+    const [description, setDescription] = useState(data.description);
+    const [actors, setActors] = useState(data.actors);
+
+
   
 
     const update_data = ( updateddata ) => {
@@ -54,7 +56,7 @@ const EditList = () => {
 
     const changeTitle = (e) => {
 
-        setName(e.target.value);
+      setTitle(e.target.value);
         // console.log( name);
     }
     const CancelEdit = () => {
@@ -80,7 +82,7 @@ const EditList = () => {
             <input className="textfield"
                 type="text"
                 value={description}
-                onChange={(event) => setAge(event.target.value)}
+                onChange={(event) => setDescription(event.target.value)}
             />
             </label>
             <label className="perlevel">
@@ -88,7 +90,7 @@ const EditList = () => {
             <input className="textfield"
                 type="text"
                 value={actors}
-                onChange={(event) => setEmail(event.target.value)}
+                onChange={(event) => setActors(event.target.value)}
             />
             </label>
             <button className="submitBtn" type="submit" >Submit</button>
