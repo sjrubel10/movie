@@ -23,14 +23,15 @@ const MovieLists = () => {
       const parametar = {
         'ids_str' : ids_str
       }
+      const limit = 2;
         
       axios.get(apiUrl, {
         params: {
+          limit : limit,
           ids_str: ids_str,
         },
       }).then((response)=>{
           
-        console.log( response )
         const newData = response.data;
 
         if(status === 0) { 
