@@ -1,6 +1,6 @@
 // import React from "react";
 
-const Wp_api_data = async () => {
+const WpApiData = async () => {
 
 
     console.log("Entry Ok");
@@ -23,4 +23,4 @@ const Wp_api_data = async () => {
 
 }
 
-export default Wp_api_data;
+export default WpApiData;

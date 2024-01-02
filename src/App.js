@@ -14,7 +14,9 @@ import EditMovie from "./component/EditMovie";
 import CreateQuizForm from "./component/CreateQuizForm";
 
 import UploadMovie from "./component/UploadMovie";
-// const apikey = '5f711c12';AddNewHtml CreateQuizForm
+
+import WpApiData from "./component/Wp_api_data";
+// const apikey = '5f711c12';AddNewHtml CreateQuizForm Wp_api_data
 
 // console.log(API_URL);
 const App = () => {
@@ -39,6 +41,8 @@ const App = () => {
                     <Route path="createquiz" element={<CreateQuizForm />} />
 
                     <Route path="uploadmovie" element={<UploadMovie />} />
+
+                    <Route path="wpapi" element={<WpApiData />} />
                 </Route>
             </Routes>
         </BrowserRouter>

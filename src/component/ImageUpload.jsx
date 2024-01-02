@@ -6,7 +6,7 @@ function ImageUploadForm() {
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
   };
-
+      
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
