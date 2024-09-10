@@ -25,10 +25,6 @@ const Layout = () => {
         var index = 0;
       } else if(location.pathname === '/lists') {
         index = 1;
-      }else if(location.pathname === '/signup') {
-        index = 2;
-      }else if(location.pathname === '/page'){
-        index = 3;
       }else if(location.pathname === '/about'){
         index = 4;
       }else {
@@ -55,14 +51,6 @@ const Layout = () => {
             <li>
                 <Link  onClick={() => handleClick(1)} style={{ color: selectedButton === 1 ? 'red' : 'white' }}
                 to="/lists">Blogs</Link>
-            </li>
-            <li>
-                <Link  onClick={() => handleClick(2)} style={{ color: selectedButton === 2 ? 'red' : 'white' }}
-                to="/signup">Sing Up</Link>
-            </li>
-            <li>
-                <Link  onClick={() => handleClick(3)} style={{ color: selectedButton === 3 ? 'red' : 'white' }}
-                to="/page">Test Pagination</Link>
             </li>
             <li>
                 <Link  onClick={() => handleClick(4)} style={{ color: selectedButton === 4 ? 'red' : 'white' }}
